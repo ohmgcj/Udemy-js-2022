@@ -21,7 +21,7 @@ obj3.__proto__ = MeuObjeto.prototype
 obj3.nome = 'Obj3'
 obj3.falar()
 
-//Resumo
+// Resumo a maluquisse
 console.log((new MeuObjeto).__proto__ === MeuObjeto.prototype)
 console.log(MeuObjeto.__proto__ === Function.prototype)
 console.log(Function.prototype.__proto__ === Object.prototype)
