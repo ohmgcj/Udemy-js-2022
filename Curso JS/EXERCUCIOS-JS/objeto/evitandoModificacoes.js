@@ -11,10 +11,12 @@ console.log(produto)
 
 // Object.seal
 const pessoa = { nome: 'Juliana', idade: 35}
-Object.seal(pessoa) // Sela o objeto
+Object.seal(pessoa) // Sela o objeto e não permite nenhuma adição de atributo (somente alteração)
 console.log('Selada:', Object.isSealed(pessoa))
 
 pessoa.sobrenome = 'Silva'
 delete pessoa.nome
 pessoa.idade = 29
 console.log(pessoa)
+
+// Object.freeze = selado + valores constantes
