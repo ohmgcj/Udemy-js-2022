@@ -1,6 +1,7 @@
 <h1>Formulário</h1>
 
-<form action="http://localhost:5500/usuarios" method="POST">
+<form method="POST">
+    <input type="hidden" name="id" value="3node">
     <input type="text" name="nome">
     <input type="password" name="senha">
     <textarea name="bio" cols="30" rows="10"></textarea>
@@ -28,9 +29,10 @@
             <option value="go">Go</option>
             <option value="c">C</option>
         </select>
-        
+
     </div>
-    <button>Incluir</button>
+    <button formaction="http://localhost:5500/usuarios">Incluir</button>
+    <button formaction="http://localhost:5500/usuarios/3">Alterar</button>
 </form>
 
 <style>
