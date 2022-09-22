@@ -1,0 +1,60 @@
+<video id="meuVideo" width="800" height="450" controls controlsList="nodownload" autoplay muted>
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu Browser não suporta a tag de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo" onclick="playVid()">Play</button>
+    <button wm-pause="meuVideo" onclick="pauseVid()">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+
+    /* -- Desafio 232 │ Realizado por mim -- */
+    var video = document.getElementById("meuVideo")
+    var barraProgresso = document.querySelector("[wm-progresso] > div")
+    var update = setInterval(atualizaBarra, 100)
+
+    function atualizaBarra() {
+        var atualPrcnt = (video.currentTime * 100) / video.duration
+        barraProgresso.style.width = `${atualPrcnt}%`
+        barraProgresso.innerHTML = `<a>${atualPrcnt.toFixed(1)}%</a>`
+    }
+
+    function playVid() {
+        video.play()
+    }
+
+    function pauseVid() {
+        video.pause()
+    }
+
+
+/* --- ".duration" colhe o tempo total do video em segundos --- */
+/* --- ".currenteTime" colhe o tempo atual do video em segundos --- */
+/* --- ".play()" e ".pause" é um metodo padrão do javascript--- */
+</script>
+
+
