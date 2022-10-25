@@ -15,6 +15,7 @@
         const divs = document.getElementsByTagName('div')
         Array.from(divs).forEach(e => e.classList.remove('destaque'))
 
+        // Spread
         const divsArray = [...divs]
         divsArray.forEach(e => e.classList.add('destaque'))
 
