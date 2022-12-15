@@ -13,13 +13,33 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
+        $(function() {
+            const pessoas = [
             { nome: 'Ana', nota: 9.1 },
             { nome: 'Bianca', nota: 8.4 },
             { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
+            { nome: 'Julia', nota: 9.7 },
+            { nome: 'Nego', nota: 10}
         ]
-        
-        // ...
+
+        // ==== Minha resolução ====
+        // Foi inserido uma tag <table> vazia direto no html para funcionamento
+        /*
+        for(let i = 0; i < pessoas.length; i++) {
+            $('#conteudo > table').append('<tr><td>', pessoas[i].nome, '</td>', '<td>', pessoas[i].nota, '</td></tr>')
+        }
+        */
+
+        // ==== Resolução Cod3r ====
+        const linhas = pessoas.map(p => {
+            const tdNome = $('<td>').html(p.nome)
+            const tdNota = $('<td>').html(p.nota)
+            return $('<tr>').append(tdNome).append(tdNota)
+        })
+
+        const tabela = $('<table>').append(linhas)
+            .css('border', 'solid 3px')
+        $('#conteudo').append(tabela)
+    })
     </script>
 </body>
