@@ -7,6 +7,13 @@ export default class Saudacao extends Component {
         nome: this.props.nome
     }
 
+    constructor(props) {
+        super(props) // Dentro de construtor precisa ter SUPER e o parametro PROPS
+
+        this.setTipo = this.setTipo.bind(this)
+        this.setNome = this.setNome.bind(this)
+    }
+
     setTipo(e) {
         this.setState({ tipo: e.target.value })// Altera o componente da página quando o estado muda
     }
@@ -22,9 +29,9 @@ export default class Saudacao extends Component {
                 <h1>{tipo} {nome}!</h1>
                 <hr />
                 <input type="text" placeholder="Tipo..." 
-                value={tipo} onChange={e => this.setTipo(e)}/> {/*Na mudança da página 'setTipo' é rodada*/}
+                value={tipo} onChange={this.setTipo}/> {/*Na mudança da página 'setTipo' é rodada*/}
                 <input type="text" placeholder="Nome..." 
-                value={nome} onChange={e => this.setNome(e)}/>
+                value={nome} onChange={this.setNome}/>
             </div>
         )
     }
