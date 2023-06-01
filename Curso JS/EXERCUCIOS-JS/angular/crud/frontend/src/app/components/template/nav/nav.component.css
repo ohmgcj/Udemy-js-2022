@@ -1,0 +1,17 @@
+.sidenav {
+    background-color: #3F51B5;
+    width: 200px;
+}
+
+.material-icon {
+    flex-direction: row;
+}
+
+.texto-branco {
+    color: #fff;
+    padding-right: 5px;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
