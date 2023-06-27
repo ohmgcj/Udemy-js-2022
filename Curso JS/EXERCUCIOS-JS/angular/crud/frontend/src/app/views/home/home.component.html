@@ -8,5 +8,9 @@
         <mat-card-subtitle class="mat-card-subtitle">
             Sistema para exemplificar a construção de um cadastro em Angular
         </mat-card-subtitle>
+        <ul>
+            <!--O asterisco aponta o "myFor" como diretiva-->
+            <li *myFor="let n em [1, 2, 3]">{{n}}</li>
+        </ul>
     </mat-card-content>
 </mat-card>
